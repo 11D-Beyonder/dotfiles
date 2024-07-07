@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="candy"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -83,13 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -103,19 +96,36 @@ alias zshcfg="nvim ~/.zshrc"
 alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
 alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
 
+# >>> nvm >>>
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
+# <<< nvm <<<
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/joe/protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "~/protable/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "~/protable/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/protable/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/protable/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/joe/protable/miniconda3/bin:$PATH"
+        export PATH="$HOME/protable/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-export PATH="/home/joe/protable/neovim/bin:$PATH"
+
+# >>> neovim <<
+export EDITOR="nvim"
+export PATH="$HOME/protable/neovim/bin:$PATH"
+# <<< neovim <<<
+
+# >>> rustup >>>
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+# <<< rustup <<<
+
 eval "$(zoxide init zsh)"
