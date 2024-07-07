@@ -93,19 +93,20 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 alias zshcfg="nvim ~/.zshrc"
+alias tree="lsd --tree"
+alias ls="lsd --header"
+alias cat="bat"
+alias ra="yazi"
+alias lg="lazygit"
 alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
 alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
 
-# >>> nvm >>>
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
-# <<< nvm <<<
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/joe/protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -116,20 +117,23 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
 
-# >>> neovim <<
 export EDITOR="nvim"
 export PATH="$HOME/protable/neovim/bin:$PATH"
-# <<< neovim <<<
 
-# >>> rustup >>>
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-# <<< rustup <<<
 
-# >>> yazi <<<
 export PATH="$HOME/protable/yazi/:$PATH"
-# <<< yazi <<<
+
+export GPG_TTY=$(tty)
+
+export HOMEBREW_INSTALL_FROM_API=1
+export HOMEBREW_API_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles/api"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.bfsu.edu.cn/homebrew-bottles"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.bfsu.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.bfsu.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_PIP_INDEX_URL="https://mirrors.bfsu.edu.cn/pypi/web/simple"
+
 
 eval "$(zoxide init zsh)"
