@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-config.color_scheme = "GruvboxDark"
+config.color_scheme = "Monokai Soda"
 config.font = wezterm.font("FantasqueSansM Nerd Font")
 config.font_size = 14
 
