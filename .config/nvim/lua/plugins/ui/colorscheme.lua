@@ -2,17 +2,13 @@ return {
   {
     "ribru17/bamboo.nvim",
     lazy = false,
-    config = function(_, opts) require("bamboo").setup(opts) end,
+    config = true,
   },
   {
     "loctvl842/monokai-pro.nvim",
     lazy = false,
     opts = {
-      filter = "classic",
+      filter = "spectrum",
     },
-    config = function(_, opts)
-      require("monokai-pro").setup(opts)
-      vim.cmd "colorscheme monokai-pro"
-    end,
   },
 }
