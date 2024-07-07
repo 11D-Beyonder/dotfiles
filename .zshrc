@@ -128,4 +128,8 @@ export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 # <<< rustup <<<
 
+# >>> yazi <<<
+export PATH="$HOME/protable/yazi/:$PATH"
+# <<< yazi <<<
+
 eval "$(zoxide init zsh)"
