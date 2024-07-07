@@ -123,6 +123,7 @@ export PATH="$HOME/protable/neovim/bin:$PATH"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/protable/yazi/:$PATH"
 
