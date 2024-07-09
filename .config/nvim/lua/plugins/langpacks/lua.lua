@@ -31,13 +31,4 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "stylua", "selene" })
     end,
   },
-  {
-    "mfussenegger/nvim-lint",
-    optional = true,
-    opts = {
-      linters_by_ft = {
-        lua = { "selene" },
-      },
-    },
-  },
 }

@@ -8,7 +8,7 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    colorscheme = "monokai-pro",
+    colorscheme = "bamboo",
     icons = {
       -- configure the loading of the lsp in the status line
       LSPLoading1 = "⠋",
