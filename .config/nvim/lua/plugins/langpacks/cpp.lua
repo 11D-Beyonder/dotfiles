@@ -30,17 +30,39 @@ return {
     end,
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    optional = true,
+    opts = function(_, opts)
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "codelldb" })
+      opts.handlers.codelldb = function(config)
+        config.adapters = {
+          type = "server",
+          port = "${port}",
+          executable = {
+            command = vim.fn.exepath "codelldb",
+            args = { "--port", "${port}" },
+            detached = vim.loop.os_uname().sysname:find "Windows" == nil,
+          },
+        }
+        config.configurations = {
+          {
+            name = "Launch file",
+            type = "codelldb",
+            request = "launch",
+            program = "${fileBasenameNoExtension}",
+            cwd = "${workspaceFolder}",
+            stopOnEntry = false,
+          },
+        }
+        config.filetypes = { "c", "cpp" }
+        require("mason-nvim-dap").default_setup(config)
+      end
+    end,
+  },
+  {
     "Civitasv/cmake-tools.nvim",
     ft = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-    dependencies = {
-      {
-        "jay-babu/mason-nvim-dap.nvim",
-        opts = function(_, opts)
-          opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "codelldb" })
-        end,
-      },
-    },
-    opts = {},
+    config = true,
   },
   {
     "p00f/clangd_extensions.nvim",
@@ -101,7 +123,6 @@ return {
             cmp.config.compare.order,
           },
         }
-        return opts
       end,
     },
   },
