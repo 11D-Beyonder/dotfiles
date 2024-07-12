@@ -50,8 +50,7 @@ return {
       ["<C-P>"] = cmp.mapping(function()
         if luasnip.jumpable(-1) then luasnip.jump(-1) end
       end, { "i", "c" }),
-      ["<Tab>"] = cmp.config.disable,
-      ["<S-Tab>"] = cmp.config.disable,
+      ["<Tab>"] = cmp.config.mapping(cmp.mapping.complete(), { "i", "c" }),
     },
   },
 }
