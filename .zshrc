@@ -98,6 +98,14 @@ alias zshcfg="nvim ~/.zshrc"
 alias tree="lsd --tree"
 alias ls="lsd --header"
 alias cat="bat"
+if grep -q "^ID=ubuntu$" /etc/os-release; then
+    # 如果是Ubuntu，设置alias cat="batcat"
+    alias cat="batcat"
+else
+    # 如果不是Ubuntu，设置alias cat="bat"
+    alias cat="bat"
+fi
+
 alias lg="lazygit"
 alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
 alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
