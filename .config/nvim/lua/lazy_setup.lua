@@ -12,9 +12,10 @@ require("lazy").setup({
     },
   },
   { import = "plugins.core" },
+  { import = "plugins.enhancements" },
   { import = "plugins.langpacks" },
   { import = "plugins.ui" },
-} --[[@as LazySpec]], {
+}, {
   install = { colorscheme = { "bamboo" } },
   ui = { backdrop = 100 },
   performance = {
@@ -29,4 +30,4 @@ require("lazy").setup({
       },
     },
   },
-} --[[@as LazyConfig]])
+})
