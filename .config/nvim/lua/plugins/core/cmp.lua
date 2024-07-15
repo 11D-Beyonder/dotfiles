@@ -67,7 +67,7 @@ return {
         ["<Up>"] = cmp.config.disable,
         ["<Down>"] = cmp.config.disable,
         ["<C-E>"] = cmp.config.disable,
-        ["C-Q"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
+        ["<C-Q>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
       },
       sources = cmp.config.sources {
         {

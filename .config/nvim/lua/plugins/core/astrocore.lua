@@ -25,6 +25,7 @@ return {
         tabstop = 4,
         shiftwidth = 0,
         cursorlineopt = "both",
+        termguicolors = true,
       },
     },
     mappings = {
