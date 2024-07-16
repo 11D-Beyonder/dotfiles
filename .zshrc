@@ -106,12 +106,9 @@ function ya() {
 alias zshcfg="nvim ~/.zshrc"
 alias tree="lsd --tree"
 alias ls="lsd --header"
-alias cat="bat"
-if grep -q "^ID=ubuntu$" /etc/os-release; then
-    # 如果是Ubuntu，设置alias cat="batcat"
+if [ -f "/etc/os-release" ] && grep -q "^ID=ubuntu$" /etc/os-release; then
     alias cat="batcat"
 else
-    # 如果不是Ubuntu，设置alias cat="bat"
     alias cat="bat"
 fi
 alias lg="lazygit"
