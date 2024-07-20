@@ -19,7 +19,7 @@ return {
                   ["<leader>lV"] = {
                     function()
                       require("astrocore").notify(
-                        "Current Env:" .. require("venv-selector").get_active_venv(),
+                        "Current Env:" .. require("venv-selector").venv(),
                         vim.log.levels.INFO
                       )
                     end,
@@ -97,18 +97,30 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
-    opts = {
-      anaconda_base_path = "$HOME/protable/miniconda3",
-      anaconda_envs_path = "$HOME/protable/miniconda3/envs",
-      stay_on_this_version = true,
-      dap_enabled = true,
-      settings = {
-        options = {
-          notify_user_on_venv_activation = true,
-        },
-      },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap-python",
+      { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
     },
-    cmd = { "VenvSelect", "VenvSelectCached" },
+    branch = "regexp",
+    config = function()
+      require("venv-selector").setup {
+        settings = {
+          search = {
+            miniconda_envs = {
+              command = "fd 'bin/python$' ~/protable/miniconda3/envs --full-path --color never",
+              type = "anaconda",
+            },
+            miniconda_base = {
+              command = "fd '/python$' ~/protable/miniconda3/bin --full-path --color never",
+              type = "anaconda",
+            },
+          },
+        },
+      }
+    end,
+    cmd = { "VenvSelect" },
   },
   {
     "mfussenegger/nvim-dap-python",
