@@ -126,9 +126,9 @@ if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
     if [ -f "$HOME/protable/miniconda3/etc/profile.d/conda.sh" ]; then
-# . "$HOME/protable/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
+		. "$HOME/protable/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-# export PATH="$HOME/protable/miniconda3/bin:$PATH"  # commented out by conda initialize
+		export PATH="$HOME/protable/miniconda3/bin:$PATH"  # commented out by conda initialize
     fi
 fi
 unset __conda_setup
