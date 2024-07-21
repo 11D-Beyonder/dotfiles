@@ -74,6 +74,8 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	zoxide
+	fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -152,4 +154,3 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles"
 export HOMEBREW_PIP_INDEX_URL="https://mirrors.zju.edu.cn/pypi/web/simple/"
 
 
-eval "$(zoxide init zsh)"
