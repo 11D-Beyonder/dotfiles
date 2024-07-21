@@ -1,8 +1,7 @@
+-- NOTE: 监听文件变动发送给LSP。
 return {
   "antosha417/nvim-lsp-file-operations",
-  -- lazy will handle loading nvim-tree and neo-tree appropriately based on the module load and our `init` function
   lazy = true,
-  -- lazily load plugin after a tree plugin is loaded
   init = function(plugin) require("astrocore").on_load({ "neo-tree.nvim", "nvim-tree.lua" }, plugin.name) end,
   dependencies = {
     "AstroNvim/astrolsp",
