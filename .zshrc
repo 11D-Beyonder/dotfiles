@@ -136,7 +136,6 @@ fi
 unset __conda_setup
 
 export EDITOR="nvim"
-export PATH="$HOME/Protable/neovim/bin:$PATH"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
