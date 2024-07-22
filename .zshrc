@@ -123,26 +123,28 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
 
-__conda_setup="$('$HOME/protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/protable/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "$HOME/protable/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
+    if [ -f "$HOME/Protable/miniconda3/etc/profile.d/conda.sh" ]; then
+		. "$HOME/Protable/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-		export PATH="$HOME/protable/miniconda3/bin:$PATH"  # commented out by conda initialize
+		export PATH="$HOME/Protable/miniconda3/bin:$PATH"  # commented out by conda initialize
     fi
 fi
 unset __conda_setup
 
 export EDITOR="nvim"
-export PATH="$HOME/protable/neovim/bin:$PATH"
+export PATH="$HOME/Protable/neovim/bin:$PATH"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export PATH="$HOME/protable/yazi/:$PATH"
+export PATH="$HOME/Protable/yazi/:$PATH"
+
+export PATH="$HOME/Protable/maven/bin/:$PATH"
 
 export GPG_TTY=$(tty)
 
