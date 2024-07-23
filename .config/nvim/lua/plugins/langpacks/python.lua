@@ -109,11 +109,11 @@ return {
         settings = {
           search = {
             miniconda_envs = {
-              command = "fd 'bin/python$' ~/protable/miniconda3/envs --full-path --color never",
+              command = "fd 'bin/python$' ~/Protable/miniconda3/envs --full-path --color never",
               type = "anaconda",
             },
             miniconda_base = {
-              command = "fd '/python$' ~/protable/miniconda3/bin --full-path --color never",
+              command = "fd '/python$' ~/Protable/miniconda3/bin --full-path --color never",
               type = "anaconda",
             },
           },

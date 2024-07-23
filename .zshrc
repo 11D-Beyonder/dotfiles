@@ -124,17 +124,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
 
-__conda_setup="$('$HOME/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/Protable/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "$HOME/Protable/miniconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
-    else
-		export PATH="$HOME/Protable/miniconda3/bin:$PATH"  # commented out by conda initialize
-    fi
-fi
-unset __conda_setup
 
 export EDITOR="nvim"
 
@@ -155,4 +144,20 @@ export HOMEBREW_API_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles"
 export HOMEBREW_PIP_INDEX_URL="https://mirrors.zju.edu.cn/pypi/web/simple/"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/Protable/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/Protable/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/Protable/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
+
+export PATH=$PATH:$HOME/.spicetify
