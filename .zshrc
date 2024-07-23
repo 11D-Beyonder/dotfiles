@@ -117,6 +117,7 @@ alias lg="lazygit"
 alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
 alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
 alias ff="fastfetch"
+alias zj="zellij"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
