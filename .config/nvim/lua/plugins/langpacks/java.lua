@@ -4,7 +4,7 @@ return {
     optional = true,
     opts = function(_, opts)
       if opts.ensure_installed ~= "all" then
-        opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "java", "html" })
+        opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "java" })
       end
     end,
   },
@@ -68,7 +68,7 @@ return {
           "-data",
           workspace_dir,
         },
-        root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew" }),
+        root_dir = vim.fs.root(0, { ".git", "mvnw", "gradlew", "pom.xml" }),
         settings = {
           java = {
             eclipse = { downloadSources = true },
@@ -131,6 +131,9 @@ return {
     dependencies = "nvim-lua/plenary.nvim",
     opts = {
       executable = "mvn",
+      commands = {
+        { cmd = { "spring-boot:run" }, desc = "start SpringBoot" },
+      },
     },
   },
 }
