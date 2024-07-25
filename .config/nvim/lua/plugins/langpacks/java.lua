@@ -128,7 +128,35 @@ return {
   {
     "eatgrass/maven.nvim",
     cmd = { "Maven", "MavenExec" },
-    dependencies = "nvim-lua/plenary.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          autocmds = {
+            dev_java = {
+              {
+                event = "VimEnter",
+                pattern = "*",
+                -- group = "dev_java",
+                callback = function()
+                  if vim.fn.findfile("pom.xml", vim.fn.getcwd() .. ";") ~= "" then
+                    require("astrocore").set_mappings {
+                      n = {
+                        ["<Leader>lm"] = {
+                          "<cmd>Maven<cr>",
+                          desc = "Execute maven goal.",
+                        },
+                      },
+                    }
+                  end
+                end,
+              },
+            },
+          },
+        },
+      },
+    },
     opts = {
       executable = "mvn",
       commands = {
