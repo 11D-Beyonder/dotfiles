@@ -97,6 +97,7 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
+    lazy = false,
     dependencies = {
       "neovim/nvim-lspconfig",
       "mfussenegger/nvim-dap",
@@ -104,22 +105,25 @@ return {
       { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
     },
     branch = "regexp",
-    config = function()
-      require("venv-selector").setup {
-        settings = {
-          search = {
-            miniconda_envs = {
-              command = "fd 'bin/python$' ~/Protable/miniconda3/envs --full-path --color never",
-              type = "anaconda",
-            },
-            miniconda_base = {
-              command = "fd '/python$' ~/Protable/miniconda3/bin --full-path --color never",
-              type = "anaconda",
-            },
+    opts = {
+      settings = {
+        options = {
+          on_telescope_result_callback = function(filename)
+            return filename:gsub(os.getenv "HOME", "~"):gsub("/bin/python", "")
+          end,
+        },
+        search = {
+          miniconda_envs = {
+            command = "fd 'bin/python$' ~/Protable/miniconda3/envs --full-path --color never",
+            type = "anaconda",
+          },
+          miniconda_base = {
+            command = "fd '/python$' ~/Protable/miniconda3/bin --full-path --color never",
+            type = "anaconda",
           },
         },
-      }
-    end,
+      },
+    },
     cmd = { "VenvSelect" },
   },
   {
