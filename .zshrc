@@ -137,6 +137,9 @@ export PATH="$HOME/Protable/maven/bin/:$PATH"
 
 export GPG_TTY=$(tty)
 
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.zju.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.zju.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_INSTALL_FROM_API=1
