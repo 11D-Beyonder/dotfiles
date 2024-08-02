@@ -126,17 +126,16 @@ return {
     end,
   },
   {
-    "nvim-neotest/neotest",
-    optional = true,
+    "rcasia/neotest-java",
+    ft = "java",
+    cmd = "NeotestJava",
     dependencies = {
-      "rcasia/neotest-java",
-      ft = "java",
-      cmd = "NeotestJava",
+      "nvim-neotest/neotest",
+      opts = function(_, opts)
+        if not opts.adapters then opts.adapters = {} end
+        table.insert(opts.adapters, require "neotest-java" {})
+      end,
     },
-    opts = function(_, opts)
-      if not opts.adapters then opts.adapters = {} end
-      table.insert(opts.adapters, require "neotest-java"(require("astrocore").plugin_opts "neotest-java"))
-    end,
   },
   {
     "eatgrass/maven.nvim",

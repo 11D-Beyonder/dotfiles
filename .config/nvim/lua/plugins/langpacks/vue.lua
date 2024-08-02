@@ -329,14 +329,14 @@ return {
     config = function(_, opts) require("vtsls").config(opts) end,
   },
   {
-    "nvim-neotest/neotest",
+    "marilari88/neotest-vitest",
     dependencies = {
-      "marilari88/neotest-vitest",
+      "nvim-neotest/neotest",
+      opts = function(_, opts)
+        if not opts.adapters then opts.adapters = {} end
+        table.insert(opts.adapters, require "neotest-vitest"(require("astrocore").plugin_opts "neotest-vitest"))
+      end,
     },
-    opts = function(_, opts)
-      if not opts.adapters then opts.adapters = {} end
-      table.insert(opts.adapters, require "neotest-vitest"(require("astrocore").plugin_opts "neotest-vitest"))
-    end,
   },
   {
     "hrsh7th/nvim-cmp",
