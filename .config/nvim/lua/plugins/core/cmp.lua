@@ -1,5 +1,4 @@
 local cmp = require "cmp"
-local luasnip = require "luasnip"
 return {
   "hrsh7th/nvim-cmp",
   optional = true,
