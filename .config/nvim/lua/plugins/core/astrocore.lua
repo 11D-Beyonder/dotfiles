@@ -20,7 +20,7 @@ return {
         number = true,
         spell = false,
         signcolumn = "yes",
-        wrap = false,
+        wrap = true,
         guifont = "FantasqueSansM Nerd Font",
         tabstop = 4,
         shiftwidth = 0,
