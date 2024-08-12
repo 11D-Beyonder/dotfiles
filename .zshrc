@@ -170,3 +170,4 @@ unset __conda_setup
 
 
 export PATH=$PATH:$HOME/.spicetify
+export PATH=$PATH:$HOME/Protable/tex/bin/x86_64-linux/
