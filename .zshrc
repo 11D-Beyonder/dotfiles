@@ -146,8 +146,8 @@ export GPG_TTY=$(tty)
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
 
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.zju.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.zju.edu.cn/git/homebrew/homebrew-core.git"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirror.nju.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirror.nju.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_INSTALL_FROM_API=1
 export HOMEBREW_API_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles"
@@ -167,9 +167,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
-export PATH=$PATH:$HOME/.spicetify
-export PATH=$PATH:$HOME/Protable/tex/bin/x86_64-linux/
-
-export LD_LIBRARY_PATH=$HOME/Protable/qt/5.15.2/gcc_64/lib:$LD_LIBRARY_PATH
