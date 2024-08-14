@@ -151,7 +151,6 @@ return {
           opts.adapters,
           require "neotest-python" {
             dap = { justMyCode = false },
-            runner = "unittest",
             python = "python",
           }
         )
