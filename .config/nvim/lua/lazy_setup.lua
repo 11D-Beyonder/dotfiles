@@ -15,6 +15,7 @@ require("lazy").setup({
   { import = "plugins.enhancements" },
   { import = "plugins.langpacks" },
   { import = "plugins.ui" },
+  { import = "plugins" },
 }, {
   install = { colorscheme = { "bamboo" } },
   ui = { backdrop = 100 },
