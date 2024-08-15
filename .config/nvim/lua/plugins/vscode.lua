@@ -58,6 +58,13 @@ return {
       maps.n["<Leader>C"] = "<Cmd>Tabclose!<CR>"
       maps.n["<Leader>bp"] = "<Cmd>Tablast<CR>"
 
+      -- side bar
+      maps.n["<Leader>e"] = function() require("vscode").action "workbench.files.action.focusFilesExplorer" end
+      maps.n["<Leader>g"] = function() require("vscode").action "workbench.view.scm" end
+      maps.n["<Leader>t"] = function() require("vscode").action "workbench.view.extension.test" end
+      maps.n["<Leader>d"] = function() require("vscode").action "workbench.view.debug" end
+      maps.n["<Leader>x"] = function() require("vscode").action "workbench.view.extensions" end
+
       -- indentation"workbench.action.toggleSidebarVisibility"
       maps.v["<Tab>"] = function() require("vscode").action "editor.action.indentLines" end
       maps.v["<S-Tab>"] = function() require("vscode").action "editor.action.outdentLines" end
