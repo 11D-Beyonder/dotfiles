@@ -15,7 +15,7 @@ ZSH_THEME="candy"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
+#
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -82,6 +82,7 @@ plugins=(
 	zsh-autosuggestions
 	zoxide
 	fzf
+	sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -164,3 +165,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(/usr/libexec/path_helper)"
