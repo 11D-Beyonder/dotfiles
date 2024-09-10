@@ -115,11 +115,7 @@ function yy() {
 alias zshcfg="nvim ~/.zshrc"
 alias tree="lsd --tree"
 alias ls="lsd --header"
-if [ -f "/etc/os-release" ] && grep -q "^ID=ubuntu$" /etc/os-release; then
-    alias cat="batcat"
-else
-    alias cat="bat"
-fi
+alias cat="bat"
 alias lg="lazygit"
 alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
 alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
