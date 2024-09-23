@@ -142,6 +142,15 @@ export HOMEBREW_API_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles/api"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles"
 export HOMEBREW_PIP_INDEX_URL="https://mirrors.zju.edu.cn/pypi/web/simple/"
 
+export LANG="zh_CN.UTF-8"
+export LC_COLLATE="zh_CN.UTF-8"
+export LC_CTYPE="zh_CN.UTF-8"
+export LC_MESSAGES="zh_CN.UTF-8"
+export LC_MONETARY="zh_CN.UTF-8"
+export LC_NUMERIC="zh_CN.UTF-8"
+export LC_TIME="zh_CN.UTF-8"
+export LC_ALL=
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('$HOME/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
