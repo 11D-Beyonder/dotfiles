@@ -17,7 +17,7 @@ end
 local config = {
 	color_scheme = scheme_for_appearance(get_appearance()),
 
-	font = wezterm.font("Rec Mono Casual"),
+	font = wezterm.font("Maple Mono NF CN"),
 	font_size = 16,
 }
 return config
