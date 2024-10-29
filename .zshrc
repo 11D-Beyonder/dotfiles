@@ -119,6 +119,7 @@ alias cat="bat"
 alias lg="lazygit"
 alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
 alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
+alias nf="neofetch"
 alias ff="fastfetch"
 alias zj="zellij"
 
