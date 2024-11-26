@@ -129,6 +129,7 @@ export EDITOR="nvim"
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/Protable/maven/bin:$PATH"
 
 
 export GPG_TTY=$(tty)
@@ -166,3 +167,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
