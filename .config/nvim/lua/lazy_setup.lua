@@ -17,7 +17,7 @@ require("lazy").setup({
   { import = "plugins.ui" },
   { import = "plugins" },
 }, {
-  install = { colorscheme = { "bamboo" } },
+  install = { colorscheme = { "catppuccin-latte" } },
   ui = { backdrop = 100 },
   performance = {
     rtp = {

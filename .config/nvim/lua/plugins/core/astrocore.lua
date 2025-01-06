@@ -21,7 +21,6 @@ return {
         spell = false,
         signcolumn = "yes",
         wrap = true,
-        guifont = "FantasqueSansM Nerd Font",
         tabstop = 4,
         shiftwidth = 0,
         cursorlineopt = "both",
