@@ -125,6 +125,7 @@ alias zj="zellij"
 
 
 export EDITOR="nvim"
+export DEEPSEEK_API_KEY="sk-2567d1f1190b456ebfea9cd970213e71"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
