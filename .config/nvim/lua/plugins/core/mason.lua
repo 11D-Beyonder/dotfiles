@@ -1,0 +1,43 @@
+return {
+	{
+		"williamboman/mason.nvim",
+		cmd = "Mason",
+		keys = {
+			{ "<leader>pm", "<cmd>Mason<cr>", desc = "[P]ackage: Mason" },
+		},
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+				keymaps = {
+					toggle_help = "?",
+				},
+			},
+		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = "williamboman/mason.nvim",
+		opts = {
+			ensure_installed = {
+				-- LSP
+				"basedpyright",
+				"bash-language-server",
+				"clangd",
+				"lua-language-server",
+				"neocmakelsp",
+				"ruff",
+				"taplo",
+				-- DAP
+				"codelldb",
+				-- Linter
+				-- Formatter
+				"shfmt",
+				"stylua",
+			},
+		},
+	},
+}
