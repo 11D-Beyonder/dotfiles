@@ -64,6 +64,8 @@ return {
 						"--query-driver=C:\\Users\\joe\\scoop\\apps\\llvm-mingw\\current\\bin\\clang++.exe,C:\\Users\\joe\\scoop\\apps\\llvm-mingw\\current\\bin\\clang.exe",
 					},
 				},
+				docker_compose_language_service = {},
+				dockerls = {},
 				lua_ls = {},
 				neocmake = {},
 				ruff = {},

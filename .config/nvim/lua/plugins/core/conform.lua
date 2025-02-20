@@ -19,9 +19,11 @@ return {
 	end,
 	opts = {
 		formatters_by_ft = {
+			["yaml.docker-compose"] = { "prettierd", "prettier", stop_after_first = true },
 			lua = { "stylua" },
 			python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 			sh = { "shfmt" },
+			yaml = { "prettierd", "prettier", stop_after_first = true },
 		},
 		default_format_opts = {
 			lsp_format = "fallback",

@@ -21,6 +21,7 @@ return {
 			"c",
 			"cmake",
 			"cpp",
+			"dockerfile",
 			"html",
 			"json5",
 			"lua",

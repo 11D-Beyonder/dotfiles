@@ -27,6 +27,8 @@ return {
 				"basedpyright",
 				"bash-language-server",
 				"clangd",
+				"docker-compose-language-service",
+				"dockerfile-language-server",
 				"lua-language-server",
 				"neocmakelsp",
 				"ruff",
