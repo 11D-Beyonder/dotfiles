@@ -2,6 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		cmd = "Mason",
+		cond = not vim.g.vscode,
 		keys = {
 			{ "<leader>pm", "<cmd>Mason<cr>", desc = "[P]ackage: Mason" },
 		},
@@ -21,6 +22,7 @@ return {
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = "williamboman/mason.nvim",
+		cond = not vim.g.vscode,
 		opts = {
 			ensure_installed = {
 				-- LSP

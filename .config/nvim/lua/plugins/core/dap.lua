@@ -5,6 +5,7 @@ return {
 			"theHamsta/nvim-dap-virtual-text",
 			"rcarriga/nvim-dap-ui",
 		},
+		cond = not vim.g.vscode,
 		cmd = "DapContinue",
 		init = function()
 			vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })

@@ -1,6 +1,7 @@
 return {
 	{
 		"Civitasv/cmake-tools.nvim",
+		cond = not vim.g.vscode,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"stevearc/overseer.nvim",

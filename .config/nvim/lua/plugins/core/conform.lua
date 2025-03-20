@@ -3,6 +3,7 @@ return {
 	dependencies = "neovim/nvim-lspconfig",
 	event = { "BufWritePre", "LspAttach" },
 	cmd = "ConformInfo",
+	cond = not vim.g.vscode,
 	keys = {
 		{
 			"<leader>lf",

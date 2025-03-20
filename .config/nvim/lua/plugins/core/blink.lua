@@ -11,6 +11,7 @@ return {
 		},
 	},
 	version = "*",
+	cond = not vim.g.vscode,
 	opts = {
 		keymap = {
 			preset = "enter",

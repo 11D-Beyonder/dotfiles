@@ -1,5 +1,6 @@
 return {
 	"echasnovski/mini.files",
+	cond = not vim.g.vscode,
 	keys = {
 		{
 			"<leader>e",

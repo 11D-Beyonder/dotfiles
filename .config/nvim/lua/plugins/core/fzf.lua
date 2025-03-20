@@ -2,6 +2,7 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	cmd = "FzfLua",
+	cond = not vim.g.vscode,
 	opts = {},
 	keys = {
 		{ "<leader>ff", "<cmd>FzfLua files<cr>", mode = "n", desc = "[F]zfLua: Find [F]iles" },

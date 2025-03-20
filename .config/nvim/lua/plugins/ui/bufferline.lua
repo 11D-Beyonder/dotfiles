@@ -1,6 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	version = "*",
+	cond = not vim.g.vscode,
 	event = "BufRead",
 	init = function() vim.opt.termguicolors = true end,
 	dependencies = {

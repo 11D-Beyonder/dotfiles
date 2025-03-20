@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	cond = not vim.g.vscode,
 	event = "BufRead",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",

@@ -1,5 +1,6 @@
 return {
 	"Bekaboo/dropbar.nvim",
+	cond = not vim.g.vscode,
 	dependencies = "nvim-tree/nvim-web-devicons",
 	event = "BufRead",
 	opts = {

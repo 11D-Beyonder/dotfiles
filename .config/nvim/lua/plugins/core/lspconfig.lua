@@ -35,6 +35,7 @@ end
 return {
 	{
 		"neovim/nvim-lspconfig",
+		cond = not vim.g.vscode,
 		event = "BufRead",
 		init = function()
 			vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })

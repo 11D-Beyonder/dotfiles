@@ -1,1 +1,5 @@
-return { "echasnovski/mini.ai", event = "BufRead", config = true }
+return {
+	"echasnovski/mini.ai",
+	event = "BufRead",
+	config = true,
+}
