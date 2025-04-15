@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 #
-function yy() {
+function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -125,25 +125,21 @@ alias zj="zellij"
 
 
 export EDITOR="nvim"
-export DEEPSEEK_API_KEY="sk-2567d1f1190b456ebfea9cd970213e71"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+export JAVA_HOME="$HOME/Protable/jdk-8/"
+export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/Protable/maven/bin:$PATH"
+export PATH="$HOME/Protable/sparrow-cli:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 
 export GPG_TTY=$(tty)
 
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn
-
-export HOMEBREW_BREW_GIT_REMOTE="https://mirror.nju.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirror.nju.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_INSTALL_FROM_API=1
-export HOMEBREW_API_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.zju.edu.cn/homebrew-bottles"
-export HOMEBREW_PIP_INDEX_URL="https://mirrors.zju.edu.cn/pypi/web/simple/"
 
 export LANG="zh_CN.UTF-8"
 export LC_COLLATE="zh_CN.UTF-8"
@@ -156,14 +152,14 @@ export LC_ALL=
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/joe/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/Protable/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/Protable/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/joe/Protable/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/joe/Protable/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/Protable/miniconda3/bin:$PATH"
+        export PATH="/Users/joe/Protable/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
