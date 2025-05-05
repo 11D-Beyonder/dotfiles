@@ -36,6 +36,7 @@ vim.opt.mouse = "a" -- 允许在普通模式、可视模式、插入模式使用
 vim.opt.undofile = true -- 启用持久撤销功能。
 vim.opt.undolevels = 10000 -- 撤销历史最大 10000。
 vim.opt.wrap = false -- 禁用折叠行。
+vim.opt.splitbelow = true -- 水平分割窗口在下方打开。
 vim.opt.splitright = true -- 垂直分割新窗口会在右侧打开。
 vim.opt.completeopt = "menu,menuone,noselect" -- 永远显示补全菜单，不自动选择第一个匹配项。
 vim.opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- 不是 SSH 连接的话就使用系统剪贴板。

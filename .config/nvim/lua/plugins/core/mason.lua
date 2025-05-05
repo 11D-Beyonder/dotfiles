@@ -34,6 +34,7 @@ return {
 				"lua-language-server",
 				"neocmakelsp",
 				"ruff",
+				"rust-analyzer",
 				"taplo",
 				-- DAP
 				"codelldb",

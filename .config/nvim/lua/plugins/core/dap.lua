@@ -122,12 +122,6 @@ return {
 		},
 		config = function()
 			local dap = require "dap"
-			-- dap.set_log_level("TRACE")
-			-- dap.adapters.lldb = {
-			-- 	type = "executable",
-			-- 	command = "codelldb" .. (vim.fn.has("win32") == 1 and ".cmd" or ""),
-			-- 	detached = (vim.fn.has("win32") == 0),
-			-- }
 			dap.adapters.lldb = {
 				type = "server",
 				port = "${port}",

@@ -1,6 +1,6 @@
 return {
 	"kawre/leetcode.nvim",
-	cond = not vim.g.vscode,
+	cond = false,
 	event = "VimEnter",
 	dependencies = {
 		"ibhagwan/fzf-lua",

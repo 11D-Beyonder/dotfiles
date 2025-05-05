@@ -132,9 +132,7 @@ export JAVA_HOME="$HOME/Protable/jdk-8/"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/Protable/maven/bin:$PATH"
-export PATH="$HOME/Protable/sparrow-cli:$PATH"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-
+export PATH="$(brew --prefix llvm)/bin:$PATH"
 
 export GPG_TTY=$(tty)
 

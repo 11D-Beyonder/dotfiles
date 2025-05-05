@@ -30,7 +30,8 @@ return {
 			"markdown_inline",
 			"python",
 			"regex",
-			"vim",
+			"rust",
+			"toml",
 		},
 		highlight = {
 			enable = true,
