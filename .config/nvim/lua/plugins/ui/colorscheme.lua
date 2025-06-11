@@ -6,6 +6,7 @@ return {
 		priority = 1000,
 		name = "catppuccin",
 		opts = {
+			term_colors = true,
 			integrations = {
 				blink_cmp = true,
 				dap = true,
