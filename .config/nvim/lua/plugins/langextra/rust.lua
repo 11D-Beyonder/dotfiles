@@ -5,7 +5,9 @@ return {
 		lazy = false,
 		init = function()
 			vim.g.rustaceanvim = {
-				tools = {},
+				tools = {
+					enable_clippy = false,
+				},
 				server = {
 					on_attach = function(_, bufnr)
 						vim.keymap.set("n", "<leader>LD", function() vim.cmd.RustLsp "debuggables" end, {
