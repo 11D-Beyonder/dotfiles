@@ -128,8 +128,6 @@ export EDITOR="nvim"
 
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-export JAVA_HOME="$HOME/Protable/jdk-8/"
-export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/Protable/maven/bin:$PATH"
 export PATH="$(brew --prefix llvm)/bin:$PATH"
