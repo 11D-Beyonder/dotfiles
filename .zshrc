@@ -8,14 +8,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="candy"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-#
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -65,25 +65,17 @@ ZSH_THEME="candy"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-VI_MODE_SET_CURSOR=true
-VI_MODE_CURSOR_NORMAL=2
-VI_MODE_CURSOR_VISUAL=2
-VI_MODE_CURSOR_INSERT=5
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	vi-mode
-	zsh-syntax-highlighting
-	zsh-autosuggestions
-	zoxide
-	fzf
-	sudo
-)
+VI_MODE_SET_CURSOR=true
+VI_MODE_CURSOR_NORMAL=2
+VI_MODE_CURSOR_VISUAL=2
+VI_MODE_CURSOR_INSERT=5
+
+plugins=(git fzf zoxide vi-mode sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,8 +86,15 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -103,25 +102,18 @@ source $ZSH/oh-my-zsh.sh
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
 #
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
-alias zshcfg="nvim ~/.zshrc"
-alias tree="lsd --tree"
-alias ls="lsd --header"
-alias cat="bat"
-alias lg="lazygit"
-alias proxy="export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897"
-alias unproxy="unset https_proxy; unset http_proxy; unset all_proxy"
-alias nf="neofetch"
-alias ff="fastfetch"
-alias zj="zellij"
 
 
 export EDITOR="nvim"
@@ -134,29 +126,3 @@ export PATH="$(brew --prefix llvm)/bin:$PATH"
 
 export GPG_TTY=$(tty)
 
-export GO111MODULE=on
-export GOPROXY=https://goproxy.cn
-
-export LANG="zh_CN.UTF-8"
-export LC_COLLATE="zh_CN.UTF-8"
-export LC_CTYPE="zh_CN.UTF-8"
-export LC_MESSAGES="zh_CN.UTF-8"
-export LC_MONETARY="zh_CN.UTF-8"
-export LC_NUMERIC="zh_CN.UTF-8"
-export LC_TIME="zh_CN.UTF-8"
-export LC_ALL=
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/Protable/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/Protable/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/Protable/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/Protable/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
