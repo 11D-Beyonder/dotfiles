@@ -1,7 +1,6 @@
 return {
 	"kawre/leetcode.nvim",
-	cond = false,
-	event = "VimEnter",
+	lazy = false,
 	dependencies = {
 		"ibhagwan/fzf-lua",
 		"nvim-lua/plenary.nvim",
@@ -23,6 +22,9 @@ return {
 					"#include<stack>",
 					"#include<string>",
 					"#include<vector>",
+					"#include<unordered_map>",
+					"#include<unordered_set>",
+					"#include<cstring>",
 					"using namespace std;",
 				},
 				after = "int main() {}",
